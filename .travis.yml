@@ -1,0 +1,26 @@
+addons:
+  apt:
+    packages:
+    - libproj-dev
+    - proj-bin
+language: perl
+perl:
+  - "5.20"
+matrix:
+  include:
+    - perl: "5.20"
+      env: COVERAGE=1
+sudo: true
+before_install:
+  - eval $(curl https://travis-perl.github.io/init) --auto
+branches:
+  except:
+    - /^wip\//
+    - /^blocked/
+  only:
+    - master
+notifications:
+  irc:
+    channels:
+      - "irc.perl.org#pdl"
+    skip_join: true

@@ -5,6 +5,8 @@ use warnings;
 use Config;
 use Devel::CheckLib;
 
+our $VERSION = '2.019103';
+
 my $find_libs = [ "libproj.$Config{dlext}", "libproj$Config{lib_ext}" ];
 my @NEEDED = qw(projects.h proj_api.h);
 my @DEFAULT_LIB = (
