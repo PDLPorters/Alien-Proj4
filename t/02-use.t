@@ -23,8 +23,19 @@ diag ('bin dir: ' . join (' ', Alien::Proj4->bin_dir));
 my @bin = Alien::Proj4->bin_dir;
 warn "no proj bin dir found via bin_dir method\n" if not @bin;
 
+
+#  some very basic tests for the projection info
+my $info = eval {
+    Alien::Proj4->load_projection_information
+};
+my $e = $@;
+ok (!$e, 'got projection information without error');
+#  could check some of the hash contents, but not sure it's worth it
+is (ref $info, 'HASH', 'projection info is a hash ref');
+
+
 TODO: {
-    local $TODO = 'leftover from gdal - might not need to be todo';
+    local $TODO = 'leftover from gdal, not sure we even need it given the planned usage';
       #if $^O =~ /darwin|bsd/i;
     my $xs = do { local $/; <DATA> };
     xs_ok {xs => $xs, verbose => 1}, with_subtest {
@@ -32,6 +43,7 @@ TODO: {
       ok $module->version;
     };
 }
+
 
 
 done_testing();
