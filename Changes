@@ -1,3 +1,6 @@
+2.019106 2019-04-27
+ - use Alien::Build etc - thanks @shawnlaffan
+
 2.019105 2019-04-26
  - declare Devel::CheckLib as dep - thanks @eserte for report
 

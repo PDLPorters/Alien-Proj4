@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use parent qw( Alien::Base );
 
-our $VERSION = '2.019105';
+our $VERSION = '2.019106';
 
 sub installed {1}
 
