@@ -15,7 +15,7 @@ my %common_reqs = (
 );
 
 my %WriteMakefileArgs = (
-    "ABSTRACT" => "Alien package for the PROJ library",
+    "ABSTRACT" => "Alien package for version 4 of the PROJ library",
     "AUTHOR"   => 'Shawn Laffan <shawnlaffan@gmail.com>',
     "NAME"     => "Alien::Proj4",
     "VERSION_FROM" => "lib/Alien/Proj4.pm",
