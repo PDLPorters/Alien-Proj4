@@ -34,6 +34,8 @@ my %WriteMakefileArgs = (
     "PREREQ_PM" => {
         "Alien::Base"   => "1.41",
         "FFI::CheckLib" => "0.23",
+        "Inline"        => "0.82",
+        "Inline::C"     => "0.80",
     },
     META_MERGE => {
         'meta-spec' => { version => 2 },
