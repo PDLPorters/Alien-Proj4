@@ -42,10 +42,10 @@ my %WriteMakefileArgs = (
         resources => {
             repository => {
                 type => 'git',
-                url  => 'https://github.com/shawnlaffan/perl-alien-proj4',
+                url  => 'https://github.com/PDLPorters/Alien-Proj4',
             },
             bugtracker => {
-                web => 'https://github.com/shawnlaffan/perl-alien-proj4/issues/',
+                web => 'https://github.com/PDLPorters/Alien-Proj4/issues',
             },
         },
     },

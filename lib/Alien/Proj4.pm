@@ -127,7 +127,7 @@ The Proj library can be accessed from Perl code via the L<Geo::Proj4> package.
 =head1 REPORTING BUGS
 
 Please send any bugs, suggestions, or feature requests to 
-L<https://github.com/shawnlaffan/perl-alien-proj4/issues>.
+L<https://github.com/PDLPorters/Alien-Proj4/issues>.
 
 =head1 SEE ALSO
 
