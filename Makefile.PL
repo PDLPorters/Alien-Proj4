@@ -53,12 +53,15 @@ my %WriteMakefileArgs = (
     "LICENSE"  => "perl",
 );
 
-use Alien::Build::MM;
-my $abmm = Alien::Build::MM->new ();
+my $abmm;
+eval {
+require Alien::Build::MM;
+$abmm = Alien::Build::MM->new ();
 %WriteMakefileArgs = $abmm->mm_args(%WriteMakefileArgs);
+};
 
 WriteMakefile(%WriteMakefileArgs);
 
 sub MY::postamble {
-  $abmm->mm_postamble;
+  $abmm->mm_postamble if $abmm;
 }
