@@ -6,7 +6,34 @@ use parent qw( Alien::Base );
 
 our $VERSION = '2.019106';
 
+#  most of the following are for compat with PDLA Makefiles
+#  and should not be used by other code
 sub installed {1}
+
+sub import {
+    #  do nothing
+    return;
+}
+
+sub default_lib {
+    return;
+}
+
+sub default_inc {
+    return;
+}
+
+sub libflags {
+    my ($class) = @_;
+    my $flags = join ' ',  $class->libs;
+    return $flags;
+}
+
+sub incflags {
+    my ($class) = @_;
+    my $flags = $class->cflags;
+    return $flags;
+}
 
 # dup of code currently in PDLA::GIS::Proj
 sub load_projection_descriptions {
