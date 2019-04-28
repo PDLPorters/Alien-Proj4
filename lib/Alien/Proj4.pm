@@ -19,10 +19,12 @@ sub import {
 
 sub default_lib {
     my ($class) = @_;
+    return;
 }
 
 sub default_inc {
     my ($class) = @_;
+    return;
 }
 
 sub libflags {
