@@ -1,6 +1,6 @@
 _alien
 
-.git
+^\.git
 
 .travis.yml
 appveyor.yml
@@ -14,3 +14,8 @@ MYMETA.yml
 
 tar.gz$
 tar$
+
+^_Inline
+\.swp$
+^blib
+^pm_to_blib$
