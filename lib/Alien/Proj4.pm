@@ -6,41 +6,32 @@ use parent qw( Alien::Base );
 
 our $VERSION = '2.019106';
 
-#  most of these are for compat with PDLA Makefiles and the like 
+#  most of the following are for compat with PDLA Makefiles
+#  and should not be used by other code
 sub installed {1}
 
-my @lib_locations;
-my @inc_locations;
 sub import {
-    my ($class, $lib, $inc) = @_;
-    @lib_locations = @$lib if $lib and @$lib;
-    @inc_locations = @$inc if $inc and @$inc;
+    #  do nothing
+    return;
 }
 
 sub default_lib {
-    my ($class) = @_;
     return;
 }
 
 sub default_inc {
-    my ($class) = @_;
     return;
 }
 
 sub libflags {
     my ($class) = @_;
-    my $flags;
-    foreach my $lib (@lib_locations, $class->libs) {
-        $flags .= "-L$lib ";  #  spaces in paths??
-    }
+    my $flags = join ' ',  $class->libs;
+    return $flags;
 }
 
 sub incflags {
     my ($class) = @_;
     my $flags = $class->cflags;
-    #  append user added dirs
-    #  a somewhat underhanded approach
-    $flags .= "-I$_" foreach @inc_locations;
     return $flags;
 }
 
