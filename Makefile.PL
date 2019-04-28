@@ -51,6 +51,7 @@ my %WriteMakefileArgs = (
     },
     "DISTNAME" => "Alien-Proj4",
     "LICENSE"  => "perl",
+    clean => { FILES => '_Inline' },
 );
 
 my $abmm;
