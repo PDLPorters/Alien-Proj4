@@ -1,3 +1,6 @@
+2.019107 2019-04-28
+ - compat with PDLA GIS - thanks @shawnlaffan
+
 2.019106 2019-04-27
  - use Alien::Build etc - thanks @shawnlaffan
 
