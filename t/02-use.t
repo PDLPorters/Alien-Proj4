@@ -30,8 +30,8 @@ my $info = eval {
 };
 is $@, '', 'got projection information without error';
 #  could check some of the hash contents, but not sure it's worth it
-is ref $info, 'HASH', 'projection info is a hash ref';
-diag explain $info;
+is ref $info, 'HASH', 'projection info is a hash ref'
+  or diag explain $info;
 
 TODO: {
     local $TODO = 'leftover from gdal, not sure we even need it given the planned usage';
