@@ -28,10 +28,12 @@ diag "no proj bin dir found via bin_dir method\n" if not @bin;
 my $info = eval {
     Alien::Proj4->load_projection_information
 };
-is $@, '', 'got projection information without error';
+my $e = $@;
+diag $e if $e;
+is $e, '', 'got projection information without error';
 #  could check some of the hash contents, but not sure it's worth it
 is ref $info, 'HASH', 'projection info is a hash ref';
-diag explain $info;
+diag explain [sort keys %$info];
 
 TODO: {
     local $TODO = 'leftover from gdal, not sure we even need it given the planned usage';
