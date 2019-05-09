@@ -128,8 +128,8 @@ Alien::Proj4 - Compile the PROJ library, version 4
 
 <p>
     <img src="https://img.shields.io/badge/perl-5.10+-blue.svg" alt="Requires Perl 5.10+" />
-    <a href="https://travis-ci.org/shawnlaffan/perl-alien-proj4"><img src="https://travis-ci.org/shawnlaffan/perl-alien-proj4.svg?branch=master" /></a>
-    <a href="https://ci.appveyor.com/project/shawnlaffan/perl-alien-proj4"><img src="https://ci.appveyor.com/api/projects/status/3lv9qu9ea2ex3p5d?svg=true" /></a>
+    <a href="https://travis-ci.org/PDLPorters/Alien-Proj4"><img src="https://travis-ci.org/PDLPorters/Alien-Proj4.svg?branch=master" /></a>
+    <a href="https://ci.appveyor.com/project/mohawk2/alien-proj4"><img src="https://ci.appveyor.com/api/projects/status/re5a1bpkj153p45x?svg=true" /></a>
 </p>
 
 =end HTML
