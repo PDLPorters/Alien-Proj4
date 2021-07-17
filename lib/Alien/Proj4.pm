@@ -160,7 +160,7 @@ L<https://github.com/PDLPorters/Alien-Proj4/issues>.
 
 L<Alien::proj>
 
-L<Geo:Proj4>
+L<Geo::Proj4>
 
 L<Geo::GDAL::FFI>
 
