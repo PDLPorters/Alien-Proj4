@@ -15,12 +15,9 @@ if ($OSNAME eq 'MSWin32') {
     plan skip_all => "Skipping use_strict tests due to false positives on $OSNAME";
 }
 
-all_perl_files_ok( ); # Syntax ok and use strict;
+use FindBin qw { $Bin };
+my @paths = map {
+    File::Spec->catfile ($Bin, qw{..}, $_ )
+} qw(bin lib t xt);
 
-#
-#use FindBin qw { $Bin };
-#my $bin_path = File::Spec->catfile ($Bin, qw{..}, 'bin');
-#my $lib_path = File::Spec->catfile ($Bin, qw{..}, 'lib');
-#my $t_path   = File::Spec->catfile ($Bin, qw{..}, 't');
-#
-#all_perl_files_ok( $bin_path, $lib_path, $t_path ); # Syntax ok and use strict;
+all_perl_files_ok( @paths ); # Syntax ok and use strict;
