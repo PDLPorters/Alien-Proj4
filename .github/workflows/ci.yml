@@ -32,8 +32,13 @@ jobs:
             coverage: true
           - perl-version: '5.30'
             os: windows-latest
-          - perl-version: '5.30'
-            os: macos-11
+          # Disable macos
+          # NOTE This issue is because the linker is
+          # not able to find the library at testing
+          # time as it is in blib/. This may need
+          # fixing by setting the value of @rpath.
+          #- perl-version: '5.30'
+          #  os: macos-11
     steps:
       - uses: actions/checkout@v2
       - name: 'ci-dist: target-setup-perl'
