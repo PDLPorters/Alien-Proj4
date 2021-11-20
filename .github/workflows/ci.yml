@@ -46,10 +46,6 @@ jobs:
         with:
           target-setup-perl: true
           perl-version: ${{ matrix.perl-version }}
-      - name: Install Perl configure deps
-        shell: bash
-        run: |
-          $MYPERL -S cpanm --dev -n Alien::Build Alien::Build::MM Alien::Build::Plugin::Cleanse::BuildDir Alien::Build::Plugin::PkgConfig::Negotiate ExtUtils::MakeMaker File::Find::Rule PkgConfig Sort::Versions || cat ~/.cpanm/build.log
       - name: Install Perl release testing deps
         if: matrix.release-test
         shell: bash
@@ -60,6 +56,7 @@ jobs:
         with:
           target-setup-perl: false
           target-install-dist-perl-deps: true
+          dist-perl-deps-configure: Alien::Build Alien::Build::MM Alien::Build::Plugin::Cleanse::BuildDir Alien::Build::Plugin::PkgConfig::Negotiate ExtUtils::MakeMaker File::Find::Rule PkgConfig Sort::Versions
           target-test-release-testing: true
           target-test: true
           test-enable-release-testing: ${{ matrix.release-test }}
