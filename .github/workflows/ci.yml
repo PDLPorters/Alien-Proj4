@@ -50,7 +50,7 @@ jobs:
         if: matrix.release-test
         shell: bash
         run: |
-          $MYPERL -S cpanm --dev -n Test::HasVersion Test::Pod Test::Perl::Critic::Progressive Test::NoTabs Test::Strict || cat ~/.cpanm/build.log
+          $MYPERL -S cpanm --dev -n Test::HasVersion Test::Pod Test::Perl::Critic::Progressive Test::NoTabs Test::Strict || ( cat ~/.cpanm/build.log && false )
       - name: 'ci-dist: target-all'
         uses: PDLPorters/devops/github-actions/ci-dist@master
         with:
